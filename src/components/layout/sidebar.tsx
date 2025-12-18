@@ -11,6 +11,8 @@ import {
   Sparkles,
   ChevronLeft,
   ChevronRight,
+  Info,
+  Mail,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -24,6 +26,8 @@ const iconMap = {
   PieChart,
   Settings,
   Sparkles,
+  Info,
+  Mail,
 } as const;
 
 export function Sidebar() {

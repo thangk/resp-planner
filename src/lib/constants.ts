@@ -93,6 +93,16 @@ export const NAV_ITEMS = [
     href: '/settings',
     icon: 'Settings',
   },
+  {
+    label: 'About',
+    href: '/about',
+    icon: 'Info',
+  },
+  {
+    label: 'Contact',
+    href: '/contact',
+    icon: 'Mail',
+  },
 ] as const;
 
 // Projection rates as percentages for display

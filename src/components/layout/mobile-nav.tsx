@@ -3,7 +3,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, FileText, Users, PieChart, Settings, Sparkles } from 'lucide-react';
+import {
+  LayoutDashboard,
+  FileText,
+  Users,
+  PieChart,
+  Settings,
+  Sparkles,
+  Info,
+  Mail,
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useUIStore } from '@/stores/ui-store';
@@ -16,6 +25,8 @@ const iconMap = {
   PieChart,
   Settings,
   Sparkles,
+  Info,
+  Mail,
 } as const;
 
 export function MobileNav() {
