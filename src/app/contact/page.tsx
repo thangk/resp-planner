@@ -8,7 +8,7 @@ export default function ContactPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Contact</h1>
-        <p className="text-muted-foreground">Get in touch with the developer.</p>
+        <p className="text-muted-foreground">Get in touch with me.</p>
       </div>
 
       {/* Contact Info */}
@@ -57,11 +57,11 @@ export default function ContactPage() {
         <CardHeader>
           <CardTitle>Response Time</CardTitle>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-4">
           <p className="text-muted-foreground leading-relaxed">
-            I typically respond to emails within 1-2 business days. For urgent matters, please
-            include &quot;Urgent&quot; in your subject line. I appreciate your patience and look
-            forward to connecting with you.
+            I typically respond to emails within a week. To help me provide better context, please
+            mention &quot;RESP Planner&quot; in your email subject or message. I appreciate your
+            patience and look forward to connecting with you.
           </p>
         </CardContent>
       </Card>

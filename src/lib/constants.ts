@@ -61,7 +61,7 @@ export const STORAGE_KEYS = {
   undo: `${APP_CONFIG.storagePrefix}-undo`,
 } as const;
 
-// Navigation items for sidebar
+// Main navigation items for sidebar
 export const NAV_ITEMS = [
   {
     label: 'Dashboard',
@@ -92,6 +92,20 @@ export const NAV_ITEMS = [
     label: 'Settings',
     href: '/settings',
     icon: 'Settings',
+  },
+] as const;
+
+// Secondary navigation items (non-app pages at bottom of sidebar)
+export const SECONDARY_NAV_ITEMS = [
+  {
+    label: 'Privacy',
+    href: '/privacy',
+    icon: 'Shield',
+  },
+  {
+    label: 'ToS',
+    href: '/tos',
+    icon: 'ScrollText',
   },
   {
     label: 'About',

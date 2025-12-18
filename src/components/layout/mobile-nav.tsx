@@ -12,11 +12,13 @@ import {
   Sparkles,
   Info,
   Mail,
+  Shield,
+  ScrollText,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useUIStore } from '@/stores/ui-store';
-import { NAV_ITEMS } from '@/lib/constants';
+import { NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/lib/constants';
 
 const iconMap = {
   LayoutDashboard,
@@ -27,6 +29,8 @@ const iconMap = {
   Sparkles,
   Info,
   Mail,
+  Shield,
+  ScrollText,
 } as const;
 
 export function MobileNav() {
@@ -37,7 +41,7 @@ export function MobileNav() {
     <>
       {/* Sheet-based sidebar for mobile */}
       <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
-        <SheetContent side="left" className="w-64 p-0">
+        <SheetContent side="left" className="flex w-64 flex-col p-0">
           <SheetHeader className="border-b p-4">
             <SheetTitle asChild>
               <Link href="/" onClick={() => setSidebarOpen(false)}>
@@ -51,10 +55,38 @@ export function MobileNav() {
               </Link>
             </SheetTitle>
           </SheetHeader>
+
+          {/* Main Navigation */}
           <nav className="flex-1 space-y-1 p-2" aria-label="Mobile navigation">
             {NAV_ITEMS.map((item) => {
               const Icon = iconMap[item.icon as keyof typeof iconMap];
               const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setSidebarOpen(false)}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={cn(
+                    'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    isActive
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  )}
+                >
+                  <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* Secondary Navigation */}
+          <nav className="space-y-1 border-t p-2" aria-label="Secondary navigation">
+            {SECONDARY_NAV_ITEMS.map((item) => {
+              const Icon = iconMap[item.icon as keyof typeof iconMap];
+              const isActive = pathname === item.href;
 
               return (
                 <Link
