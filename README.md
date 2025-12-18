@@ -24,7 +24,6 @@ Plan and optimize your children's education savings with contribution tracking, 
 - **Data Export/Import**: Export and import data as JSON
 - **Print View**: Generate print-friendly plan summaries
 - **Dark Mode**: Full dark mode support
-- **Keyboard Shortcuts**: Navigate quickly with keyboard shortcuts
 
 ### SEO & Deployment
 
@@ -160,18 +159,6 @@ All data is stored locally in your browser's localStorage. No data is sent to an
 - **Export**: Download all data as a JSON file
 - **Import**: Restore data from a JSON export
 - **Clear**: Remove all stored data
-
-## Keyboard Shortcuts
-
-| Shortcut | Action              |
-| -------- | ------------------- |
-| `G D`    | Go to Dashboard     |
-| `G P`    | Go to Plans         |
-| `G C`    | Go to Children      |
-| `G O`    | Go to Portfolio     |
-| `G S`    | Go to Settings      |
-| `N`      | New Plan            |
-| `?`      | Show shortcuts help |
 
 ## Development
 
