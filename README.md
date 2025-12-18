@@ -57,7 +57,7 @@ Plan and optimize your children's education savings with contribution tracking, 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/kapwebdev/resp-planner.git
+git clone https://github.com/thangk/resp-planner.git
 cd resp-planner
 ```
 
