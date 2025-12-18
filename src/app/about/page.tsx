@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, GraduationCap, MapPin } from 'lucide-react';
 import Link from 'next/link';
+import { APP_CONFIG } from '@/lib/constants';
 
 export default function AboutPage() {
   return (
@@ -16,7 +17,7 @@ export default function AboutPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <GraduationCap className="h-5 w-5" />
-            Hi, I&apos;m Kap Thang
+            Hi, I&apos;m {APP_CONFIG.author.name}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -65,7 +66,7 @@ export default function AboutPage() {
             between.
           </p>
           <Button asChild>
-            <Link href="https://kapthang.dev/projects" target="_blank" rel="noopener noreferrer">
+            <Link href={APP_CONFIG.author.projectsUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
               View All Projects
             </Link>

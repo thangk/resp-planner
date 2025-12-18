@@ -48,6 +48,16 @@ export const APP_CONFIG = {
   name: 'RESP Planner',
   version: '1.0.0',
   storagePrefix: 'resp-planner',
+  url: 'https://resp-planner.ca',
+  description:
+    "Plan and optimize your children's RESP education savings with contribution tracking, government grants, and investment projections.",
+  author: {
+    name: 'Kap Thang',
+    email: 'contact@kapthang.dev',
+    url: 'https://kapthang.dev',
+    projectsUrl: 'https://kapthang.dev/projects',
+  },
+  themeColor: '#1A4F5C',
 } as const;
 
 // Storage keys for Zustand persist
@@ -116,6 +126,28 @@ export const SECONDARY_NAV_ITEMS = [
     label: 'Contact',
     href: '/contact',
     icon: 'Mail',
+  },
+] as const;
+
+// Changelog
+export const CHANGELOG = [
+  {
+    version: '1.0.0',
+    date: '2025-12',
+    title: 'Initial Release',
+    changes: [
+      'Dashboard with RESP savings overview and progress tracking',
+      'Quick Start Wizard for easy onboarding',
+      'Plan management with contribution projections',
+      'Multi-child support with individual CESG/CLB tracking',
+      'Portfolio configuration with custom ETF allocations',
+      'Government grant calculations (CESG, ACESG, CLB)',
+      'Investment growth projections (conservative/moderate/optimistic)',
+      'Plan comparison tool',
+      'Data export/import functionality',
+      'Dark/light theme support',
+      'Fully offline - all data stored locally',
+    ],
   },
 ] as const;
 

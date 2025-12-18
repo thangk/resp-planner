@@ -1,0 +1,6 @@
+# robots.txt for RESP Planner
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://resp-planner.ca/sitemap.xml

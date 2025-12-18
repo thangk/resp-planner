@@ -1,0 +1,43 @@
+# Development-only content (not needed in production)
+
+# Prompt templates
+prompts/
+
+# Personal notes and graphics
+mynotes/
+graphics/
+
+# Documentation
+*.md
+!README.md
+CLAUDE.md
+
+# Test files
+tests/
+e2e/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+__tests__/
+coverage/
+playwright-report/
+test-results/
+vitest.config.ts
+playwright.config.ts
+
+# Docker files (not needed for Vercel)
+Dockerfile
+docker-compose*.yml
+
+# CI/CD
+.github/
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code
+.claude/

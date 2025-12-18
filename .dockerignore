@@ -13,6 +13,14 @@ dist
 .gitignore
 *.md
 !README.md
+CLAUDE.md
+
+# Prompt templates
+prompts/
+
+# Personal notes and graphics
+mynotes/
+graphics/
 
 # IDE
 .vscode
@@ -29,6 +37,8 @@ Thumbs.db
 .env.*.local
 
 # Test files
+tests/
+e2e/
 coverage
 .nyc_output
 *.test.ts
@@ -36,12 +46,26 @@ coverage
 *.spec.ts
 *.spec.tsx
 __tests__
+playwright-report/
+test-results/
+vitest.config.ts
+playwright.config.ts
 
 # Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+
+# Vercel
+.vercel
+.vercelignore
+
+# CI/CD
+.github/
+
+# Claude Code
+.claude/
 
 # Misc
 *.log

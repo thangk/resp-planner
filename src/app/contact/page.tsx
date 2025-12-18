@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Mail, ExternalLink, MessageSquare } from 'lucide-react';
 import Link from 'next/link';
+import { APP_CONFIG } from '@/lib/constants';
 
 export default function ContactPage() {
   return (
@@ -41,9 +42,9 @@ export default function ContactPage() {
                   The best way to reach me for any inquiries or collaboration opportunities.
                 </p>
                 <Button asChild variant="outline" className="mt-2">
-                  <Link href="mailto:contact@kapthang.dev">
+                  <Link href={`mailto:${APP_CONFIG.author.email}`}>
                     <Mail className="mr-2 h-4 w-4" />
-                    contact@kapthang.dev
+                    {APP_CONFIG.author.email}
                   </Link>
                 </Button>
               </div>
@@ -77,7 +78,7 @@ export default function ContactPage() {
             and find additional ways to connect.
           </p>
           <Button asChild>
-            <Link href="https://kapthang.dev" target="_blank" rel="noopener noreferrer">
+            <Link href={APP_CONFIG.author.url} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="mr-2 h-4 w-4" />
               Visit Portfolio
             </Link>

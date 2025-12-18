@@ -15,11 +15,12 @@ import {
   Mail,
   Shield,
   ScrollText,
+  History,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { useUIStore } from '@/stores/ui-store';
-import { NAV_ITEMS, SECONDARY_NAV_ITEMS } from '@/lib/constants';
+import { NAV_ITEMS, SECONDARY_NAV_ITEMS, APP_CONFIG } from '@/lib/constants';
 
 const iconMap = {
   LayoutDashboard,
@@ -99,6 +100,24 @@ export function Sidebar() {
               );
             })}
           </nav>
+        </div>
+
+        {/* Changelogs */}
+        <div className="border-t p-2">
+          <Link
+            href="/changelogs"
+            aria-label={sidebarCollapsed ? 'View changelogs' : undefined}
+            className={cn(
+              'flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors',
+              pathname === '/changelogs'
+                ? 'bg-primary/10 text-primary'
+                : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+              sidebarCollapsed ? 'justify-center' : 'justify-start'
+            )}
+          >
+            <History className="h-4 w-4 shrink-0" />
+            {!sidebarCollapsed && <span className="ml-2">v{APP_CONFIG.version}</span>}
+          </Link>
         </div>
 
         {/* Collapse toggle */}

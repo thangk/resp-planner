@@ -19,18 +19,68 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: APP_CONFIG.name,
-  description:
-    "Plan and optimize your children's RESP education savings with contribution tracking, government grants, and investment projections.",
+  metadataBase: new URL(APP_CONFIG.url),
+  title: {
+    default: APP_CONFIG.name,
+    template: `%s - ${APP_CONFIG.name}`,
+  },
+  description: APP_CONFIG.description,
+  keywords: [
+    'RESP',
+    'Registered Education Savings Plan',
+    'Canada',
+    'education savings',
+    'CESG',
+    'Canada Education Savings Grant',
+    'CLB',
+    'Canada Learning Bond',
+    'investment calculator',
+    'education planning',
+  ],
+  authors: [{ name: APP_CONFIG.author.name, url: APP_CONFIG.author.url }],
+  creator: APP_CONFIG.author.name,
   manifest: '/manifest.webmanifest',
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-icon.png',
   },
+  openGraph: {
+    type: 'website',
+    locale: 'en_CA',
+    url: APP_CONFIG.url,
+    siteName: APP_CONFIG.name,
+    title: APP_CONFIG.name,
+    description: APP_CONFIG.description,
+    images: [
+      {
+        url: '/og',
+        width: 1200,
+        height: 630,
+        alt: APP_CONFIG.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: APP_CONFIG.name,
+    description: APP_CONFIG.description,
+    images: ['/og'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1A4F5C',
+  themeColor: APP_CONFIG.themeColor,
 };
 
 export default function RootLayout({
