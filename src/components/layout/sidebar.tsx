@@ -41,62 +41,65 @@ export function Sidebar() {
   return (
     <aside
       className={cn(
-        'bg-background hidden h-[calc(100vh-3.5rem)] border-r transition-all duration-300 md:block',
+        'bg-background sticky top-14 hidden h-[calc(100vh-3.5rem)] border-r transition-all duration-300 md:block',
         sidebarCollapsed ? 'w-16' : 'w-64'
       )}
     >
       <div className="flex h-full flex-col">
-        {/* Main Navigation */}
-        <nav className="flex-1 space-y-1 p-2" aria-label="Main navigation">
-          {NAV_ITEMS.map((item) => {
-            const Icon = iconMap[item.icon as keyof typeof iconMap];
-            const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+        {/* Navigation container */}
+        <div className="flex-1 overflow-y-auto">
+          {/* Main Navigation */}
+          <nav className="space-y-1 p-2" aria-label="Main navigation">
+            {NAV_ITEMS.map((item) => {
+              const Icon = iconMap[item.icon as keyof typeof iconMap];
+              const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={isActive ? 'page' : undefined}
-                aria-label={sidebarCollapsed ? item.label : undefined}
-                className={cn(
-                  'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                  isActive
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                )}
-              >
-                <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                {!sidebarCollapsed && <span>{item.label}</span>}
-              </Link>
-            );
-          })}
-        </nav>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  aria-label={sidebarCollapsed ? item.label : undefined}
+                  className={cn(
+                    'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    isActive
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  )}
+                >
+                  <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  {!sidebarCollapsed && <span>{item.label}</span>}
+                </Link>
+              );
+            })}
+          </nav>
 
-        {/* Secondary Navigation */}
-        <nav className="space-y-1 border-t p-2" aria-label="Secondary navigation">
-          {SECONDARY_NAV_ITEMS.map((item) => {
-            const Icon = iconMap[item.icon as keyof typeof iconMap];
-            const isActive = pathname === item.href;
+          {/* Secondary Navigation */}
+          <nav className="space-y-1 border-t p-2" aria-label="Secondary navigation">
+            {SECONDARY_NAV_ITEMS.map((item) => {
+              const Icon = iconMap[item.icon as keyof typeof iconMap];
+              const isActive = pathname === item.href;
 
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={isActive ? 'page' : undefined}
-                aria-label={sidebarCollapsed ? item.label : undefined}
-                className={cn(
-                  'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
-                  isActive
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                )}
-              >
-                <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
-                {!sidebarCollapsed && <span>{item.label}</span>}
-              </Link>
-            );
-          })}
-        </nav>
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={isActive ? 'page' : undefined}
+                  aria-label={sidebarCollapsed ? item.label : undefined}
+                  className={cn(
+                    'flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                    isActive
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                  )}
+                >
+                  <Icon className="h-5 w-5 shrink-0" aria-hidden="true" />
+                  {!sidebarCollapsed && <span>{item.label}</span>}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
 
         {/* Collapse toggle */}
         <div className="border-t p-2">
