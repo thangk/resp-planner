@@ -1,8 +1,18 @@
-# RESP Planner
+<p align="center">
+  <img src="graphics/logo-h.png" alt="RESP Planner" width="400" />
+</p>
 
-A comprehensive RESP (Registered Education Savings Plan) planning tool for Canadian families. Plan and optimize your children's education savings with contribution tracking, government grants, and investment projections.
+<p align="center">
+  A comprehensive RESP (Registered Education Savings Plan) planning tool for Canadian families.
+</p>
+
+---
+
+Plan and optimize your children's education savings with contribution tracking, government grants, and investment projections.
 
 ## Features
+
+### Core Features
 
 - **Child Management**: Track multiple children with RESP beneficiary details
 - **Contribution Planning**: Create detailed year-by-year contribution schedules
@@ -15,6 +25,14 @@ A comprehensive RESP (Registered Education Savings Plan) planning tool for Canad
 - **Print View**: Generate print-friendly plan summaries
 - **Dark Mode**: Full dark mode support
 - **Keyboard Shortcuts**: Navigate quickly with keyboard shortcuts
+
+### SEO & Deployment
+
+- **Dynamic OG Images**: Auto-generated Open Graph images for social sharing
+- **SEO Optimized**: Sitemap, robots.txt, and meta tags
+- **Security Headers**: X-Frame-Options, X-Content-Type-Options, Referrer-Policy
+- **Docker Support**: Production-ready Docker configuration
+- **Vercel Ready**: Optimized for Vercel deployment
 
 ## Tech Stack
 
@@ -39,7 +57,7 @@ A comprehensive RESP (Registered Education Savings Plan) planning tool for Canad
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/resp-planner.git
+git clone https://github.com/kapwebdev/resp-planner.git
 cd resp-planner
 ```
 
@@ -66,17 +84,17 @@ pnpm start
 
 ### Docker
 
-Build and run with Docker Compose:
+Build and run with Docker Compose (runs on port 3001):
 
 ```bash
 docker compose up --build
 ```
 
-Or build manually:
+Or build manually (port 3001 maps to container's 3000):
 
 ```bash
 docker build -t resp-planner .
-docker run -p 3000:3000 resp-planner
+docker run -p 3001:3000 resp-planner
 ```
 
 ## Project Structure
@@ -84,14 +102,19 @@ docker run -p 3000:3000 resp-planner
 ```
 src/
 ├── app/                    # Next.js App Router pages
+│   ├── about/             # About page
+│   ├── changelogs/        # Version history
 │   ├── children/          # Children management page
+│   ├── contact/           # Contact page
 │   ├── dashboard/         # Main dashboard
 │   ├── plans/             # Plans list and detail pages
 │   │   ├── [id]/         # Individual plan view
 │   │   ├── compare/      # Plan comparison tool
 │   │   └── new/          # New plan creation
 │   ├── portfolio/         # ETF portfolio management
+│   ├── privacy/           # Privacy policy
 │   ├── settings/          # App settings
+│   ├── tos/               # Terms of service
 │   └── wizard/           # Quick start wizard
 ├── components/
 │   ├── layout/           # Header, sidebar, navigation
@@ -172,17 +195,16 @@ The project uses:
 - Prettier for formatting
 - Husky for pre-commit hooks
 
-## Contributing
+## Author
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/my-feature`
-3. Commit changes: `git commit -m 'Add my feature'`
-4. Push to branch: `git push origin feature/my-feature`
-5. Open a Pull Request
+**Kap Thang**
+
+- Website: [kapthang.dev](https://kapthang.dev)
+- Projects: [kapthang.dev/projects](https://kapthang.dev/projects)
 
 ## License
 
-This project is open source under the MIT License.
+This project is proprietary software. All rights reserved.
 
 ## Disclaimer
 
