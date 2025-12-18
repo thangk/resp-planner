@@ -19,7 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/privacy',
     '/tos',
-    '/changelogs',
+    '/changelog',
   ];
 
   return staticPages.map((route) => ({

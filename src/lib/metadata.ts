@@ -111,9 +111,9 @@ export const PAGE_METADATA = {
     description: 'Terms of service and disclaimer for using RESP Planner.',
     path: '/tos',
   },
-  changelogs: {
-    title: 'Changelogs',
+  changelog: {
+    title: 'Changelog',
     description: 'Version history and release notes for RESP Planner.',
-    path: '/changelogs',
+    path: '/changelog',
   },
 } as const;

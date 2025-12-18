@@ -102,14 +102,14 @@ export function Sidebar() {
           </nav>
         </div>
 
-        {/* Changelogs */}
+        {/* Changelog */}
         <div className="border-t p-2">
           <Link
-            href="/changelogs"
-            aria-label={sidebarCollapsed ? 'View changelogs' : undefined}
+            href="/changelog"
+            aria-label={sidebarCollapsed ? 'View changelog' : undefined}
             className={cn(
               'flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors',
-              pathname === '/changelogs'
+              pathname === '/changelog'
                 ? 'bg-primary/10 text-primary'
                 : 'text-muted-foreground hover:bg-muted hover:text-foreground',
               sidebarCollapsed ? 'justify-center' : 'justify-start'
