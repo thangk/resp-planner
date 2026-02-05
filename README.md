@@ -32,6 +32,7 @@ Plan and optimize your children's education savings with contribution tracking, 
 - **Security Headers**: X-Frame-Options, X-Content-Type-Options, Referrer-Policy
 - **Docker Support**: Production-ready Docker configuration
 - **Vercel Ready**: Optimized for Vercel deployment
+- **Analytics**: Vercel Analytics integration
 
 ## Tech Stack
 
