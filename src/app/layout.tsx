@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { ToastProvider } from '@/components/providers/toast-provider';
@@ -116,6 +117,7 @@ export default function RootLayout({
           </div>
           <ToastProvider />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
