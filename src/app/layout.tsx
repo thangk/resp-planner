@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { ToastProvider } from '@/components/providers/toast-provider';
+import { PostHogProvider } from '@/components/providers/posthog-provider';
 import { Header } from '@/components/layout/header';
 import { Sidebar } from '@/components/layout/sidebar';
 import { MobileNav } from '@/components/layout/mobile-nav';
@@ -92,32 +93,34 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {/* Skip link for keyboard navigation */}
-          <a
-            href="#main-content"
-            className="focus:bg-primary focus:text-primary-foreground sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:px-4 focus:py-2 focus:outline-none"
+        <PostHogProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
-            Skip to main content
-          </a>
-          <div className="relative min-h-screen">
-            <Header />
-            <div className="flex">
-              <Sidebar />
-              <main id="main-content" className="flex-1 p-4 pb-20 md:p-6 md:pb-6" role="main">
-                {children}
-              </main>
+            {/* Skip link for keyboard navigation */}
+            <a
+              href="#main-content"
+              className="focus:bg-primary focus:text-primary-foreground sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:px-4 focus:py-2 focus:outline-none"
+            >
+              Skip to main content
+            </a>
+            <div className="relative min-h-screen">
+              <Header />
+              <div className="flex">
+                <Sidebar />
+                <main id="main-content" className="flex-1 p-4 pb-20 md:p-6 md:pb-6" role="main">
+                  {children}
+                </main>
+              </div>
+              <MobileNav />
             </div>
-            <MobileNav />
-          </div>
-          <ToastProvider />
-        </ThemeProvider>
-        <Analytics />
+            <ToastProvider />
+          </ThemeProvider>
+          <Analytics />
+        </PostHogProvider>
       </body>
     </html>
   );
