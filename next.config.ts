@@ -5,6 +5,23 @@ const nextConfig: NextConfig = {
   // Set DOCKER_BUILD=true in CI/CD or when building Docker images
   ...(process.env.DOCKER_BUILD === 'true' && { output: 'standalone' as const }),
 
+  // Required for PostHog reverse proxy rewrites
+  skipTrailingSlashRedirect: true,
+
+  // PostHog reverse proxy — avoids ad blockers
+  async rewrites() {
+    return [
+      {
+        source: '/ingest/static/:path*',
+        destination: 'https://us-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/ingest/:path*',
+        destination: 'https://us.i.posthog.com/:path*',
+      },
+    ];
+  },
+
   // Security headers
   async headers() {
     return [
