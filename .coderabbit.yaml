@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+
+reviews:
+  path_filters:
+    # Lock files
+    - "!pnpm-lock.yaml"
+
+    # Vendored UI components (Shadcn)
+    - "!src/components/ui/**"
+
+    # Static assets
+    - "!public/**"
+
+    # Build output
+    - "!.next/**"
+
+    # Environment files
+    - "!.env*"
+
+    # Dev tooling configs
+    - "!eslint.config.mjs"
+    - "!components.json"
+    - "!.prettierrc"
+
+    # CI/CD and IDE
+    - "!.github/**"
+    - "!.vscode/**"
+
+    # Docker
+    - "!Dockerfile"
+    - "!docker-compose*.yml"
+
+    # Test infrastructure (not test logic)
+    - "!playwright-report/**"
+    - "!test-results/**"
+    - "!coverage/**"

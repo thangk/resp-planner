@@ -41,3 +41,11 @@ docker-compose*.yml
 
 # Claude Code
 .claude/
+
+# Code review configs
+.coderabbit.yaml
+
+# Dev tooling configs
+.prettierrc
+eslint.config.mjs
+components.json
